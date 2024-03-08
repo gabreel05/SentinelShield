@@ -7,8 +7,12 @@ describe("GET /test", () => {
     server.close();
   });
 
-  it("should return status code 404", async () => {
+  it("should return a list of users", async () => {
     const response = await request(server).get("/test");
-    expect(response.statusCode).toBe(404);
+    expect(response.body).toEqual([
+      { id: 1, name: "Alice" },
+      { id: 2, name: "Bob" },
+      { id: 3, name: "Charlie" },
+    ]);
   });
 });

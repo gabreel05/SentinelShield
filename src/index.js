@@ -10,9 +10,9 @@ const users = [
   { id: 3, name: "Charlie" },
 ];
 
-// app.get("/test", (_, res) => {
-//   res.send(users);
-// });
+app.get("/test", (_, res) => {
+  res.send(users);
+});
 
 const server = app.listen(3000);
 
